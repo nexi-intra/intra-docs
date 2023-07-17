@@ -89,6 +89,10 @@ const config = {
                 to: "/docs/intro",
               },
               {
+                label: "Rest API's",
+                to: "/docs/api",
+              },
+              {
                 label: "Koksmat",
                 to: "/docs/magicbox",
               },
@@ -134,7 +138,36 @@ const config = {
     //     },
     //   },
     // ],
-  
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "apiDocs",
+        docsPluginId: "classic",
+        config: {
+          exchange: { // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
+            specPath: "https://magicbox.nexi-intra.com/openapi/exchange/openapi.json", // Path to designated spec file
+            outputDir: "docs/api/exchange", // Output directory for generated .mdx docs
+            sidebarOptions: {
+           //   groupPathsBy: "tag",
+            },
+          },
+          admin: {
+            specPath: "https://magicbox.nexi-intra.com/openapi/admin/openapi.json", // Path to designated spec file
+            outputDir: "docs/api/admin", // Output directory for generated .mdx docs
+            sidebarOptions: {
+         //     groupPathsBy: "tag",
+            },
+          },
+          core: {
+            specPath: "https://magicbox.nexi-intra.com/openapi/core/openapi.json", // Path to designated spec file
+            outputDir: "docs/api/core", // Output directory for generated .mdx docs
+            sidebarOptions: {
+          //    groupPathsBy: "tag",
+            },
+          }
+        }
+      },
+    ],
     [
       require.resolve("@cmfcmf/docusaurus-search-local"),
 
