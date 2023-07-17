@@ -1,14 +1,3 @@
-FROM node:16 
-WORKDIR /usr/src/app
-COPY . .
-RUN npm install -g pnpm turbo
-RUN pnpm install
-RUN mkdir -p /tmp/root/365admin-nodejs
-RUN turbo run build --filter=@koksmat/docs
-WORKDIR /usr/src/app/apps/docs
-EXPOSE 5301
-CMD ["npm", "run","start"]
-
 ## Base ########################################################################
 # Use a larger node image to do the build for native deps (e.g., gcc, python)
 FROM node:lts as base
