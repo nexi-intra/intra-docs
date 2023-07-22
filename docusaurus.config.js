@@ -6,13 +6,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "KOKSMAT",
+  title: "MAGICBOX",
   staticDirectories: ['public', 'static'],
-  tagline: "A lot of magic in a box, recipes and solutions for your inspiration and reuse - Primarly for Microsoft Online products",
+  tagline: "A box with the nicest cousine. A lot of magic in a box, recipes and solutions for your inspiration and reuse - Primarly for Microsoft Online products",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://www.koksmat.com",
+  url: "https://home.nexi-intra.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -23,7 +23,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "koksmat", // Usually your GitHub org/user name.
-  projectName: "backend", // Usually your repo name.
+  projectName: "docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -68,7 +68,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "KOKSMAT",
+        title: "MAGICBOX",
         items: [
           { to: "/blog", label: "Blog", position: "left" },
           {
@@ -93,7 +93,7 @@ const config = {
                 to: "/docs/api",
               },
               {
-                label: "Koksmat",
+                label: "Magicbox",
                 to: "/docs/magicbox",
               },
             ],
