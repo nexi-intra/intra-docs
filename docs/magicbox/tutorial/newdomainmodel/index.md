@@ -33,6 +33,12 @@ ConvertTo-Json -InputObject $result
 $mailbox.WindowsEmailAddress
 ```
 
+## Intrastructure
+### Kubernetes cluster
+### MongoDB
+### PODS
+#### Koksmat CLI
+#### NextJS app
 
 ## Koksmat GO application
 The Koksmat CLI is a kind of Swizz knife with the purpose of having one applicationm capeable of being called for different purposes. 
@@ -55,7 +61,7 @@ The Koksmat CLI is a Go application and the source code is available on [GitHub]
 
 ## MongoDB
 
-## SharePoin list
+## SharePoint list
 
 
 
