@@ -16,7 +16,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Admin automation',
+    title: 'Complex usecase automation',
     img: img1,
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Microsoft 365',
+    title: 'Using your Microsoft 365',
     img: img2,
     description: (
       <>
@@ -36,11 +36,12 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Power Platform',
+    title: 'Hosted on your Kubernetes cluster ',
     img: img3,
     description: (
       <>
-      Our focus is on learning you to make a great  User Experience. 
+     You get everything running in your very own Azure Kubernetes Service (AKS) cluster. Come with GitOps repository 
+     containing all bootstrap code and automatic deployment pipelines.
       </>
     ),
   },

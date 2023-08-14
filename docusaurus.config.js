@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "MAGICBOX",
+  title: "Intra365",
   staticDirectories: ['public', 'static'],
-  tagline: "A box with the nicest cousine. A lot of magic in a box, recipes and solutions for your inspiration and reuse - Primarly for Microsoft Online products",
+  tagline: "Blackbox with all that you need to make your Microsoft 365 platform the perfect digital workplace. A box with the nicest cousine. A lot of magic in a box, recipes and solutions for your inspiration and reuse - Primarly for Microsoft Online products",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -46,14 +46,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/koksmat-com/magicbox/tree/master/apps/docs",
+            "https://github.com/koksmat-com/docs/tree/master/apps/docs",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-          "https://github.com/koksmat-com/magicbox/tree/master/apps/docs",
+          "https://github.com/koksmat-com/docs/tree/master/apps/docs",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -68,7 +68,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "MAGICBOX",
+        title: "Intra365",
         items: [
           { to: "/blog", label: "Blog", position: "left" },
           {
