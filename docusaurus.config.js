@@ -6,13 +6,13 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Intra365",
+  title: "Koksmat",
   staticDirectories: ['public', 'static'],
-  tagline: "Blackbox with all that you need to make your Microsoft 365 platform the perfect digital workplace. A box with the nicest cousine. A lot of magic in a box, recipes and solutions for your inspiration and reuse - Primarly for Microsoft Online products",
+  tagline: "Koksmat is a Danish word that means \"Chef's assistance\" or Helping Hand",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://home.nexi-intra.com",
+  url: "https://learn.koksmat.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -22,7 +22,7 @@ const config = {
   themes: ["@docusaurus/theme-mermaid","docusaurus-theme-openapi-docs"],
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "koksmat", // Usually your GitHub org/user name.
+  organizationName: "koksmat-com", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -68,11 +68,15 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Intra365",
+        logo: {
+          alt: 'Koksmat Logo',
+          src: 'img/koksmat/koksmat Icon.png',
+        },
+        title: "KOKSMAT",
         items: [
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/koksmat-com/magicbox",
+            href: "https://github.com/koksmat-com/docs",
             label: "GitHub",
             position: "right",
           },
@@ -84,10 +88,8 @@ const config = {
           {
             title: "Docs",
             items: [
-              {
-                label: "Intro",
-                to: "/docs/intro",
-              },
+          {label:"Tags",
+        to:"/docs/tags"},
               {
                 label: "Rest API's",
                 to: "/docs/api",
@@ -108,7 +110,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/koksmat-com/magicbox",
+                href: "https://github.com/koksmat-com/docs",
               },
             ],
           },
