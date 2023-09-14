@@ -30,6 +30,14 @@ The much longer story is related to my uncertainty about my self. A year a go I 
 
 ![](Hidden-Disabilities-Program.jpg)
 
+## What is in it for you?
+
+I have made so many solutions during my carreer, but until recently haven't found the right recipe for sharing it with others. I have tried to make a blog, but it is not really my thing. I have tried to make videos, but it is not really my thing either. I have tried to make code samples, but it is not really my thing either. Spebd years with Logic Apps, PowerApps and Power Automate, but it is not really make it nice through a product life cycle. What I love though, is Lists in SharePoint.
+
+But trying to develop something which combines all of this, I think I have found something which I can do, resulting in the GitHub organization [Koksmat](https://www.github.com/koksmat-com).
+
+
+
 
 
 
