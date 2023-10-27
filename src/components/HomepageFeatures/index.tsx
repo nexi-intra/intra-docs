@@ -16,7 +16,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Complex usecase automation',
+    title: 'Killer Apps that can be maintained',
     img: img1,
     description: (
       <>
@@ -30,8 +30,7 @@ const FeatureList: FeatureItem[] = [
     img: img2,
     description: (
       <>
-        The more complicated you make it, the harder it will be to control. We suggest that you use an approach of making a 
-        lot of small parts, with a central list acting as a name services and the place to go for discovering new opportunities.
+        The more complicated you make it, the harder it will be to control. We have a deep insight in to which tools will work for a given task.
       </>
     ),
   },

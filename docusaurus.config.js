@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Koksmat",
   staticDirectories: ['public', 'static'],
-  tagline: "Koksmat is a Danish word that means \"Chef's assistance\" or Helping Hand",
+  tagline: "Join us in cooking the best stew in the world for making the digital work experience better",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -74,7 +74,9 @@ const config = {
         },
         title: "KOKSMAT",
         items: [
-          { to: "/blog", label: "Blog", position: "left" },
+
+          { to: "/docs/modules", label: "Modules", position: "left" },
+           { to: "/docs/koksmat", label: "Developer", position: "left" },
           {
             href: "https://github.com/koksmat-com/docs",
             label: "GitHub",
@@ -104,10 +106,10 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "https://jumpto365.com/koksmat-com/docs",
+              // },
               {
                 label: "GitHub",
                 href: "https://github.com/koksmat-com/docs",
@@ -115,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen .`,
+        copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
       },
       prism: {
         theme: lightCodeTheme,
