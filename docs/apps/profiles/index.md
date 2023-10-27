@@ -2,9 +2,15 @@
 # Profiles
 
 ## Initial page
-
-### First time
 We like to ensure that users without and existing account can be invited to the platform.
+
+## Use Cases
+
+### First time visit
+
+path: /profile
+
+As a first time user, you will be able to get a profile by entering your email address and setting up your preferences.
 
 ```mermaid
 flowchart TD
@@ -30,11 +36,15 @@ https://login.microsoftonline.com/79dc228f-c8f2-4016-8bf0-b990b6c72e98/oauth2/v2
 
 ![](2023-10-27-13-02-26.png)
 
-### Second time
+### Return visit
 ![](2023-10-27-12-38-17.png)
 
 
 ## Profiling page
+/profile/route
+
+### Profile page
+
 
 ## Return to profle page
 

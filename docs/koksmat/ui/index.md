@@ -1,8 +1,6 @@
 ---
 tags: [Koksmat,Onboarding]
 ---
-# How to develop a UI module
-The UI modules are implemented using the App router in the NextJS framework.
 
 ## Introduction
 Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
@@ -15,10 +13,19 @@ Creating
 
 
 ### Magicbox Framework
-Basic understanding of the 
+Basic understanding of the framework
 
 ###  NextJS Framwork
 Basic understanding of the NextJS framework
 
 ### Magicbox Modules
-Basic understanding on how to develop a “magicbox module” Covering :  React components – useState, useContext, useMemo, Tailwind CSS, React server side actionsm MSAL, Magicbox API
+Basic understanding on how to develop a “Magicbox Applications” Covering :  
+- React components 
+- React hooks: useState,useContext,useMemo
+- React server side actions
+- Tailwind CSS
+- Microsoft Auth Library (MSAL)
+- Magicbox API
+
+# How to develop a UI module
+The UI modules are implemented using the App router in the NextJS framework.
