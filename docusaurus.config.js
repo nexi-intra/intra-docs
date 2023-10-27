@@ -75,7 +75,7 @@ const config = {
         title: "KOKSMAT",
         items: [
 
-          { to: "/docs/modules", label: "Modules", position: "left" },
+          { to: "/docs/apps", label: "Apps", position: "left" },
            { to: "/docs/koksmat", label: "Developer", position: "left" },
           {
             href: "https://github.com/koksmat-com/docs",
