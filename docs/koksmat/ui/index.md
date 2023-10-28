@@ -2,15 +2,23 @@
 tags: [Koksmat,Onboarding]
 ---
 # Getting started
+Make killer apps by decompositioning Microsoft 365 and other digital services and build Magical bite size dishes
+
 ## TL;DR
 - Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
-- In the fork, make a for branch
 - Start a GitHub Code Space
 - Within the repo, navigate to `/ui/app/www/apps`
 - Create a subfolder with the name of your app
 - Copy the contents of the `/ui/app/www/apps/template` folder into your new folder
 - Hit debug 
 - Navigate to http://localhost:4321
+
+### Deploy to Vercel
+- Create a Vercel account
+- Create a new project
+- Connect to your GitHub repo
+- Hit deploy
+
 
 ## Initial Training
 
