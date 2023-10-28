@@ -117,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
+       // copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
       },
       prism: {
         theme: lightCodeTheme,
