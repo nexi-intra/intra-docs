@@ -1,5 +1,8 @@
+---
+lifecycle: Prototyped
+---
 
-# CAVA (Alpha)
+# CAVA
 
 ```yaml
 magicapp: v1

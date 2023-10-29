@@ -12,7 +12,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Make KILLER APPS for Microsoft 365 !</h1>
+        <h1 className="hero__title">Make KILLER APPS for your Digital Workspace</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
          <div className={styles.buttons}>
           <Link
@@ -31,7 +31,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Make KILLER APPS `}
-      description="Join us in cooking the best stew in the world for making the digital work experience better">
+      description="Decompositioning Microsoft 365 and other digital services and build Magical bite size dishes">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

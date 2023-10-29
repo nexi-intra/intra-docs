@@ -1,4 +1,7 @@
-# Devices (Alpha)
+---
+lifecycle: Prototyped
+---
+# Devices 
 
 
 

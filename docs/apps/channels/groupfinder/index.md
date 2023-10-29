@@ -1,6 +1,4 @@
 ---
 lifecycle: Prototyped
 ---
-# Booking 
-
-
+# Group Finder

@@ -1,4 +1,7 @@
-# Signage (Alpha)
+---
+lifecycle: Prototyped
+---
+# Signage
 
 Web page for supporting anonymous to book a meeting room ad-hoc.
 

@@ -1,6 +1,5 @@
+
 ---
 lifecycle: Prototyped
 ---
-# Booking 
-
-
+# Full page

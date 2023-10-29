@@ -1,5 +1,7 @@
-
-# Catering (Alpha)
+---
+lifecycle: Prototyped
+---
+# Catering 
 
 Source https://github.com/koksmat-com/ui/tree/main/apps/www/app/cava/salesorder
 
