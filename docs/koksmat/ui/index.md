@@ -11,6 +11,7 @@ This guide will help you get started with developing a new app for the Koksmat p
 ## TL;DR
 - Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
 - Start a GitHub Code Space
+- Time for a cup of coffee
 - Hit debug 
 - Navigate to http://localhost:4321
 
