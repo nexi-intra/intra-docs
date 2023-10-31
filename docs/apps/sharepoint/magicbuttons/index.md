@@ -1,5 +1,5 @@
-
 ---
 lifecycle: Prototyped
 ---
+
 # Magic Button

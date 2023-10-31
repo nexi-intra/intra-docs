@@ -1,23 +1,74 @@
 ---
 tags: [Koksmat,Onboarding]
+status: draft
 ---
 # Getting started
-Make killer apps by decompositioning Microsoft 365 and other digital services and build Magical bite size dishes
+
+Status: `draft`
+
+This guide will help you get started with developing a new app for the Koksmat platform.
 
 ## TL;DR
 - Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
 - Start a GitHub Code Space
 - Within the repo, navigate to `/ui/app/www/apps`
-- Create a subfolder with the name of your app
-- Copy the contents of the `/ui/app/www/apps/template` folder into your new folder
 - Hit debug 
 - Navigate to http://localhost:4321
 
-### Deploy to Vercel
-- Create a Vercel account
-- Create a new project
-- Connect to your GitHub repo
-- Hit deploy
+
+## Prerequisites
+- A GitHub account
+- A browswer
+- React development experience
+
+
+
+
+## Bootstrap
+
+### Fork the UI Repository
+
+Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
+
+### Start a GitHub Code Space
+
+Start a GitHub Code Space
+
+### Create a new app subfolder
+
+Within the repo, navigate to `/ui/app/www/apps`
+
+### Connect to a cluster
+
+```bash
+az login --use-device-code
+az account set --subscription "Office365 admin" -o table
+az aks get-credentials --resource-group magicbox --name magicbox-prod
+```
+
+Result
+
+```text
+Merged "magicbox-prod" as current context in /home/codespace/.kube/config
+```
+
+### Create .env file
+Create a .env file in the `/apps/www` folder with the following content
+
+```text
+DATABASE=christianiabpos
+MONGODB=mongodb://username:password@localhost:27017/?directConnection=true&authMechanism=DEFAULT&tls=false
+```
+
+Replace the username and password with the credentials you got from the cluster
+
+## Develop
+Establish a connection to the cluster
+
+
+```bash
+kubectl port-forward services/prod-mongos 27017:27017 -n percona
+```
 
 
 ## Initial Training
