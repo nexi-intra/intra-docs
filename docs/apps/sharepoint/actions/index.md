@@ -2,4 +2,4 @@
 lifecycle: Prototyped
 ---
 
-# Magic Button
+# Actions

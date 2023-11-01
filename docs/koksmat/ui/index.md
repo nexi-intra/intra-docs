@@ -41,6 +41,7 @@ Within the repo, navigate to `/ui/app/www/apps`
 ### Connect to a cluster
 
 ```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az login --use-device-code
 az account set --subscription "Office365 admin" -o table
 az aks get-credentials --resource-group magicbox --name magicbox-prod
