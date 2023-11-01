@@ -1,4 +1,0 @@
----
-lifecycle: Prototyped
----
-# Group Finder

@@ -1,6 +1,0 @@
----
-lifecycle: Prototyped
----
-# Channels 
-
-
