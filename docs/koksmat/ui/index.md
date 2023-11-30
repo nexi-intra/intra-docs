@@ -38,18 +38,23 @@ When in you fork, change the branch to the appropriate one - suggest **tools** f
 
 ### Install dependencies
 
+Open a terminal and run the following commands
+
 ```bash
-cd /apps/www
+cd apps/www
 pnpm install
 ```
 
 
 ### Connect to a cluster
+Open a terminal and run the following commands
 
 ```bash
 az login --use-device-code
 az account set --subscription "Office365 admin" -o table
-az aks get-credentials --resource-group magicbox --name magicbox-test
+az aks install-cli
+az aks get-credentials --resource-group magicbox --name magicbox-dev
+
 ```
 
 Result

@@ -98,10 +98,7 @@ const config = {
                 label: "Rest API's",
                 to: "/docs/api",
               },
-              {
-                label: "Magicbox",
-                to: "/docs/magicbox",
-              },
+           
             ],
           },
 

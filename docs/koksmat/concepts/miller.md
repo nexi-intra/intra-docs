@@ -11,6 +11,8 @@ Status: `draft`
 
 Ambition is to make something which can end to be as powerfull as an US Aircraft Carrier, but as easy to use to get started with as sailing a small boat. `Miller` is a part of the name of the next US Aircraft Carrier - [CVN-81](https://en.wikipedia.org/wiki/USS_Doris_Miller) which will be name after Doris Miller - a hero from the attack on Pearl Harbor - working as a `Koksmat` - Naval Cook assistant.
 
+![](2023-11-30-09-33-38.png)
+
 ## The Bridge
 ![](2023-11-30-08-36-41.png)
 
