@@ -42,10 +42,10 @@ This generates the update scripts for the groups and contacts.
 ### Execute update scripts
 Updates scripts run in parallel with a max number of threads matching the number of allowed Exchange Management sessions in your tenant
 
-### Delete Missing Groups
+### Delete Missing Groups (not implemenented)
 Run sequentially through the list of groups and deletes those know longer needed.
 
-### Publish Group Finder index
+### Publish Group Finder index  (not implemenented)
 Publishes the Group Finder index to the Group Finder API
 
 
@@ -59,7 +59,7 @@ Exposes the API for uploading and validating the latest Excel file.
 koksmat serve groupfinder
 ```
 
-UI path: /channel/groupbuilder/upload
+UI path: [/app/channels/mailgroups](https://github.com/koksmat-com/ui/blob/tools/apps/www/app/channels/mailgroups/page.tsx)
 
 ### Processing the latest Excel file
 
