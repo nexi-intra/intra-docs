@@ -59,7 +59,7 @@ Exposes the API for uploading and validating the latest Excel file.
 koksmat serve groupfinder
 ```
 
-UI path: /channel/groupbuilder/upload
+UI path: [/app/channels/mailgroups](https://github.com/koksmat-com/ui/blob/tools/apps/www/app/channels/mailgroups/page.tsx)
 
 ### Processing the latest Excel file
 
