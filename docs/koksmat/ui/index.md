@@ -1,6 +1,7 @@
 ---
 tags: [Koksmat,Onboarding]
 status: draft
+sidebar_position: 1
 ---
 # Getting started
 
@@ -18,33 +19,42 @@ This guide will help you get started with developing a new app for the Koksmat p
 
 ## Prerequisites
 - A GitHub account
-- A browswer
+- A browser
 - React development experience
 
-
-
-
-## Bootstrap
+## Copy code and start a Code Space
 
 ### Fork the UI Repository
 
-Make a fork of the UI into your own repo - https://github.com/koksmat-com/ui/fork
+Make a clone of the repository by forking,  **include all branches** by unchecking the "Copy the main branch only"
+
+Direct link to create a fork: https://github.com/koksmat-com/ui/fork
 
 ### Start a GitHub Code Space
 
-Start a GitHub Code Space
+When in you fork, change the branch to the appropriate one - suggest **tools** for now, then start a GitHub Code Space
 
-### Create a new app subfolder
+## Install dependencies and connect 
 
-Within the repo, navigate to `/ui/app/www/apps`
+### Install dependencies
 
-### Connect to a cluster
+Open a terminal and run the following commands
 
 ```bash
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+cd apps/www
+pnpm install
+```
+
+
+### Connect to a cluster
+Open a terminal and run the following commands
+
+```bash
 az login --use-device-code
 az account set --subscription "Office365 admin" -o table
-az aks get-credentials --resource-group magicbox --name magicbox-prod
+az aks install-cli
+az aks get-credentials --resource-group magicbox --name magicbox-dev
+
 ```
 
 Result
@@ -61,16 +71,29 @@ DATABASE=christianiabpos
 MONGODB=mongodb://username:password@localhost:27017/?directConnection=true&authMechanism=DEFAULT&tls=false
 ```
 
-Replace the username and password with the credentials you got from the cluster
+Replace the username and password with the credentials you got from the cluster administrator
+
+### Create a new app subfolder
+
+Within the repo, navigate to `/ui/app/www/apps/starters`.
+
+Copy the `starter` folder and rename it to the name of your app - e.g. `myapp`.
+
 
 ## Develop
-Establish a connection to the cluster
+Establish a connection to the database in the cluster
 
+### Port forward to the database
 
 ```bash
 kubectl port-forward services/prod-mongos 27017:27017 -n percona
 ```
 
+### Start debugging
+
+
+In VS Code Hit debug 
+Navigate to http://localhost:4321/myapp
 
 ## Initial Training
 
@@ -94,3 +117,21 @@ Covering
 
 # How to develop a new app
 The UI modules are implemented using the App router in the NextJS framework.
+
+
+
+## Screen shots
+
+### Fork the repository 
+ 
+![](2023-11-30-07-06-13.png)
+
+
+### Change to "tools" branch 
+
+![](2023-11-30-07-06-33.png)
+
+### Create a codespace
+
+
+![](2023-11-30-07-06-53.png)

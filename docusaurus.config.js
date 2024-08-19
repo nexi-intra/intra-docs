@@ -75,8 +75,10 @@ const config = {
         title: "KOKSMAT",
         items: [
 
-          { to: "/docs/apps", label: "Apps", position: "left" },
+          
            { to: "/docs/koksmat", label: "Developer", position: "left" },
+           { to: "/docs/apps", label: "Sample Apps", position: "left" },
+
           {
             href: "https://github.com/koksmat-com/docs",
             label: "GitHub",
@@ -96,10 +98,7 @@ const config = {
                 label: "Rest API's",
                 to: "/docs/api",
               },
-              {
-                label: "Magicbox",
-                to: "/docs/magicbox",
-              },
+           
             ],
           },
 
