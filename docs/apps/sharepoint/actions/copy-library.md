@@ -1,5 +1,0 @@
----
-lifecycle: Prototyped
----
-
-# Copy Library

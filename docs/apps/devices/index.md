@@ -1,7 +1,0 @@
----
-lifecycle: Prototyped
----
-# Devices 
-
-
-

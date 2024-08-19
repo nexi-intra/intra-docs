@@ -1,5 +1,0 @@
----
-lifecycle: Draft
----
-
-# Copy List

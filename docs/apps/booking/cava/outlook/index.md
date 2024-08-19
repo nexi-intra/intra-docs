@@ -1,5 +1,0 @@
----
-lifecycle: Prototyped
----
-
-# Outlook CAVA

@@ -1,5 +1,0 @@
----
-lifecycle: Prototyped
----
-
-# Full page

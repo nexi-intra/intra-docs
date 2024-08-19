@@ -1,5 +1,0 @@
----
-lifecycle: Prototyped
----
-
-# Actions
