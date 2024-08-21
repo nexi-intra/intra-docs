@@ -17,6 +17,8 @@ While Microsoft 365 provides a comprehensive suite of tools, its extensive use c
 
 To address these challenges, I embarked on a journey to reduce dependency on Microsoft 365 by leveraging the power of AI and cloud-native microservices. The goal was to transition key business processes from Microsoft 365 tools into a more flexible and scalable architecture hosted within my Azure Tenant.
 
+<!-- truncate -->
+
 This transformation involved:
 
 - **Migrating from Microsoft Forms to AI-driven form processing services:** By creating custom AI-enhanced forms, I was able to replicate and surpass the capabilities of Microsoft Forms, offering more advanced data processing and integration options.

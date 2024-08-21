@@ -1,54 +1,62 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
 // import img1 =from "@site/static/Step1.png"
 // import img2 from "@site/static/img/Step2.png"
 // import img3 from "@site/static/img/Step3.png"
-const img1 = require('@site/static/img/Step1.png').default;
-const img2 = require('@site/static/img/Step2.png').default;
-const img3 = require('@site/static/img/Step3.png').default;
+const img1 = require("@site/static/img/Step1.png").default;
+const img2 = require("@site/static/img/Step2.png").default;
+const img3 = require("@site/static/img/Step3.png").default;
 
 type FeatureItem = {
   title: string;
-  img: string
+  img: string;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Killer Apps that can be maintained',
+    title: "Streamlining Microsoft 365 Complexity",
     img: img1,
     description: (
       <>
-      Microsoft 365 automation using whatever admin interfaces Microsofts provides, including unattende PowerShell execution. 
-      Also covers full DevOps pipeline utilizing Azure DevOps, GitHub, and Azure.
-            </>
-    ),
-  },
-  {
-    title: 'Using your Microsoft 365',
-    img: img2,
-    description: (
-      <>
-        The more complicated you make it, the harder it will be to control. We have a deep insight in to which tools will work for a given task.
+        The more complicated you make it, the harder it will be to control. My
+        mission is to simplify Microsoft 365 by focusing on its core
+        elements—Exchange Online, SharePoint Online, and Azure Active
+        Directory—while empowering you to build tailored, maintainable
+        solutions.
       </>
     ),
   },
   {
-    title: 'Hosted on your Kubernetes cluster ',
+    title: "Empowering DevAdmins with Automation",
+    img: img2,
+    description: (
+      <>
+        Automate your Microsoft 365 environment using the tools and scripts that
+        matter. Say goodbye to unnecessary complexity with Power Apps and Power
+        Automate, and instead leverage PowerShell and SharePoint Lists where
+        they truly make a difference.
+      </>
+    ),
+  },
+  {
+    title: "Building Robust, Self-Sufficient Systems ",
     img: img3,
     description: (
       <>
-     You get everything running in your very own Azure Kubernetes Service (AKS) cluster. Come with GitOps repository 
-     containing all bootstrap code and automatic deployment pipelines.
+        Forget the one-size-fits-all approach. By understanding the strengths
+        and limitations of Microsoft 365, you can build systems that are not
+        only powerful but also self-sufficient, reducing your reliance on
+        out-of-the-box solutions.
       </>
     ),
   },
 ];
 
-function Feature({title, img, description}: FeatureItem) {
+function Feature({ title, img, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <img className={styles.featureSvg} src={img}></img>
         {/* <Svg className={styles.featureSvg} role="img" /> */}

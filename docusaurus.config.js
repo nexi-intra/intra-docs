@@ -8,7 +8,7 @@
 const config = {
   title: "Koksmat",
   staticDirectories: ['public', 'static'],
-  tagline: "Decompositioning Microsoft 365 and other digital services and build Magical bite size dishes",
+  tagline: "Break free from the Microsoft 365 mold and craft tailored, powerful solutions that truly fit your needs. Simplify complexity, automate smarter, and build systems that stand strong on their own.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -75,7 +75,7 @@ const config = {
         title: "KOKSMAT",
         items: [
 
-          
+          { to: "/blog", label: "Blog", position: "left" },
            { to: "/docs/koksmat", label: "Developer", position: "left" },
            { to: "/docs/apps", label: "Sample Apps", position: "left" },
 
@@ -94,10 +94,7 @@ const config = {
             items: [
           {label:"Tags",
         to:"/docs/tags"},
-              {
-                label: "Rest API's",
-                to: "/docs/api",
-              },
+
            
             ],
           },
@@ -107,7 +104,7 @@ const config = {
             items: [
                {
                  label: "Blog",
-                 to: "https://jumpto365.com/koksmat-com/docs",
+                 to: "/blog",
                },
               {
                 label: "GitHub",
