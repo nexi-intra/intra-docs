@@ -12,7 +12,9 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Master Your Digital Workspace</h1>
+        <h1 className="hero__title">
+          Become the Chef of Your Digital Workspace
+        </h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
@@ -31,8 +33,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Master Your Digital Workspace`}
-      description="Break free from the Microsoft 365 mold and craft tailored, powerful solutions that truly fit your needs. Simplify complexity, automate smarter, and build systems that stand strong on their own."
+      title={`Become the Chef of Your Digital Workspace`}
+      description="At Koksmat, we provide the essential tools and assistance you need to master your digital workspace. Simplify, automate, and create powerful solutions that make you the chef in your own tech kitchen."
     >
       <HomepageHeader />
       <main>

@@ -8,7 +8,7 @@
 const config = {
   title: "Koksmat",
   staticDirectories: ['public', 'static'],
-  tagline: "Break free from the Microsoft 365 mold and craft tailored, powerful solutions that truly fit your needs. Simplify complexity, automate smarter, and build systems that stand strong on their own.",
+  tagline: "At Koksmat, we provide the essential tools and assistance you need to master your digital workspace. Simplify, automate, and create powerful solutions that make you the chef in your own tech kitchen.",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here

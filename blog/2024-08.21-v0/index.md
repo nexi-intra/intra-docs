@@ -23,26 +23,30 @@ v0.dev is an innovative platform designed to bridge the gap between your data mo
 
 #### **How Does It Work?**
 
-Using v0.dev is straightforward, even if you’re new to the platform. Here’s a quick overview:
+Using v0.dev is straightforward, check it here
 
-1. **Prepare Your Data Model:** Start by defining your data model. This can be as simple or as complex as your project requires. v0.dev supports various data types and relationships, ensuring that your model is accurately represented in the UI.
-
-2. **Upload Your Model:** Once your data model is ready, upload it to v0.dev. The platform will analyze the model and automatically generate a corresponding user interface.
-
-3. **Customize the Interface:** v0.dev provides a range of customization options, allowing you to tweak the UI to better fit your project’s needs. Whether it’s changing the layout, adjusting the style, or adding specific functionalities, you have full control.
-
-4. **Deploy and Enjoy:** After customizing, you can deploy the interface directly from v0.dev or export it for further integration into your existing projects. It’s that simple!
+(![](https://www.youtube.com/watch?v=By9wCB9IZp0))
 
 #### **Real-World Use Case:**
 
-Imagine you’re managing a Microsoft 365 environment and need to create a user interface for managing users and permissions. With v0.dev, you can define your data model—such as user roles, permissions, and user details—and let the platform generate a fully functional UI. Instead of spending hours (or even days) coding and testing, you’ll have a ready-to-use interface in minutes.
+Picture this: you're tasked with managing a Microsoft 365 environment and need to create a self-service portal for managing meeting rooms within your organization. Traditionally, this would involve significant time spent coding and testing to ensure the interface meets your needs. However, with v0.dev, in combination with Koksmat Studio, you can streamline this process dramatically. By leveraging these tools, you can generate a fully functional user interface in just minutes, eliminating the need for hours—or even days—of manual work. This approach not only speeds up deployment but also allows you to focus on optimizing the user experience and meeting your organization’s specific requirements.
 
 #### **Get Started Today!**
 
-Ready to see how v0.dev can transform your workflow? Head over to [v0.dev](https://v0.dev) and give it a try. In my upcoming video, I’ll walk you through a step-by-step tutorial on how to create a UI from a data model using v0.dev, so stay tuned!
+Ready to see how v0.dev can transform your workflow?
 
----
+Copy the following snippet
 
-This blog post serves as a teaser that highlights the benefits of using v0.dev, setting the stage for more detailed content, such as your video tutorial. When you're ready to shoot the video, you can follow the structure of this post, expanding on each section and showing live examples on the platform.
+```text
 
-Let me know if there’s anything else you’d like to add or adjust!
+like to have a typescript safe component which can be used to get data from a zod schema.
+The input values shall be kept using state variables. Like to have a cancel button and a submit button.
+Please ignore the fields named id, created_at, tenant and searchindex
+
+ z.object({ "title": z.any().optional(), "description": z.string().optional(), "tenant": z.string().optional(), "searchindex": z.string().describe("Search Index is used for concatenating all searchable fields in a single field making in easier to search\n").optional(), "name": z.string().optional(), "address": z.string().optional(), "site_id": z.number().optional() })
+
+```
+
+Then head over to [v0.dev](https://v0.dev/chat) and give it a try. In my upcoming video, I’ll walk you through a step-by-step tutorial on how to create a UI from a data model using v0.dev, so stay tuned!
+
+_Disclaimer: This blog is not affiliated with or endorsed by Vercel, the creator of v0.dev. The opinions and experiences shared here are solely those of the author._
