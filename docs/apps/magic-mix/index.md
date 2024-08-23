@@ -97,4 +97,4 @@ If you'd like to contribute to Magic Mix, please fork the repository, create a n
 
 ## License
 
-Magic Mix is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Magic Mix is licensed under the MIT License.
