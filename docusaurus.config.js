@@ -65,8 +65,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+
+      mermaid: {
+        theme: {light: 'neutral', dark: 'forest'},
+      },
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/koksmat-social.png",
       navbar: {
         logo: {
           alt: 'Koksmat Logo',
@@ -77,7 +81,7 @@ const config = {
 
           { to: "/blog", label: "Blog", position: "left" },
            { to: "/docs/koksmat", label: "Developer", position: "left" },
-           { to: "/docs/apps", label: "Sample Apps", position: "left" },
+           { to: "/docs/apps", label: "Tools", position: "left" },
 
           {
             href: "https://github.com/koksmat-com/docs",
