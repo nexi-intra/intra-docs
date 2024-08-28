@@ -83,6 +83,7 @@ const config = {
            { to: "/docs/koksmat", label: "Developer", position: "left" },
            { to: "/docs/apps", label: "Tools", position: "left" },
 
+           { to: "/docs/gallery", label: "Gallery", position: "left" },
           {
             href: "https://github.com/koksmat-com/docs",
             label: "GitHub",

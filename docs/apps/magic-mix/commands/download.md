@@ -144,6 +144,7 @@ magic-mix download batch [destination folder] [batchfile.json|batchfile.yaml] [f
 **Flags:**
 
 - `-h, --help`: Displays help information for the `batch` subcommand.
+- `--dryrun`: Simulate the batch download without actually downloading files
 
 ## Flags
 

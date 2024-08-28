@@ -40,6 +40,8 @@ Automates the removal of elements or configurations from your project.
 
 Executes a predefined automation script or command sequence.
 
+[More details](./run.md)
+
 ### `set`
 
 Configures or sets specific parameters or options within your automation tasks.
