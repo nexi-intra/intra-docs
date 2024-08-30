@@ -27,7 +27,7 @@ Here is a list of all the available commands in `koksmat`:
 | Command                        | Description                     |
 | ------------------------------ | ------------------------------- |
 | [add](commands/add.md)         | Add ingredients to your project |
-| [auto](commands/auto.md)       | Auto pilot mode                 |
+| [auto](commands/auto/index.md) | Auto pilot mode                 |
 | [context](commands/context.md) | Manage context configurations   |
 | [kitchen](commands/kitchen.md) | Manage kitchen settings         |
 
