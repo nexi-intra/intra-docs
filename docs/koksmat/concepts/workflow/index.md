@@ -18,17 +18,15 @@ graph TB
          User["booking.home.nexigroup.com"]
     end
     subgraph ExternalUser ["Intranet"]
-        Editor["Editor accessing Koksmat Studio"]
+        Editor["studio.koksmat.com"]
     end
 
     subgraph NexiPlatformBoundary ["Nexi Microsoft Cloud"]
         subgraph KubernetesCluster ["Kubernetes Cluster"]
 
-            KoksmatStudio["Web Magic Studio"]
+            KoksmatStudio["Koksmat Studio"]
             NexiBooking["Nexi Booking"]
             WorkflowDesigner["Flow designer"]
-            NATSstore["NATS store"]
-            NATSmessage["NATS messaging"]
             WorkflowRuntime["Flow runtime"]
             WorkflowController["Flow control"]
 
@@ -49,9 +47,13 @@ graph TB
     KoksmatStudio --> WorkflowDesigner
     WorkflowDesigner --> |Store flows| PostgreSQLDB
     WorkflowRuntime --> |Sending Email| Graph
+    %% WorkflowRuntime --> |Trace| NATSmessage
     WorkflowController --> WorkflowRuntime
     WorkflowController --> |Triggers| PostgreSQLDB
     WorkflowController --> |Models| PostgreSQLDB
+
+
+
 
 
 ```
