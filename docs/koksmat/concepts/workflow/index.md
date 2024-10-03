@@ -24,7 +24,7 @@ graph TB
     subgraph NexiPlatformBoundary ["Nexi Microsoft Cloud"]
         subgraph KubernetesCluster ["Kubernetes Cluster"]
 
-            KoksmatStudio["Koksmat Studio"]
+            KoksmatStudio["Magic Button Studio"]
             NexiBooking["Nexi Booking"]
             WorkflowDesigner["Flow designer"]
             WorkflowRuntime["Flow runtime"]
@@ -63,7 +63,7 @@ Let's dive into the individual components of this diagram and their roles within
 ## 1. **External Users**: Access Points for Different User Types
 
 - **User (booking.home.nexigroup.com)**: External users, such as customers or end users, access the Nexi Booking system via the public internet. This component represents the web-based booking service that users interact with for managing appointments or reservations.
-- **Editor (Editor accessing Koksmat Studio)**: Editors and administrators working within the organization access Koksmat Studio via the intranet. These users have additional permissions and responsibilities to design and manage workflows within the Koksmat platform.
+- **Editor (Editor accessing Magic Button Studio)**: Editors and administrators working within the organization access Magic Button Studio via the intranet. These users have additional permissions and responsibilities to design and manage workflows within the Koksmat platform.
 
 ### Key Takeaway:
 
@@ -77,7 +77,7 @@ The **Nexi Platform Boundary** represents the core infrastructure of the platfor
 
 This is where most of the platform’s microservices reside, ensuring scalability and high availability. Let’s look at each of the services running in this cluster:
 
-- **Koksmat Studio (Web Magic Studio)**: This is the interface for the editors to design workflows and configure automation. Editors interact with this component to manage system behavior and processes.
+- **Magic Button Studio (Web Magic Studio)**: This is the interface for the editors to design workflows and configure automation. Editors interact with this component to manage system behavior and processes.
 - **Nexi Booking**: The booking service accessed by external users. It interacts with other components to handle reservations and user data.
 - **Workflow Designer (Flow Designer)**: This tool is where editors can create and manage workflows. Workflows define the automated sequences or processes that the system will execute.
 - **NATS Store & NATS Messaging**: These are the messaging and event-handling services. **NATS Messaging** facilitates real-time communication between different microservices, while **NATS Store** ensures that events are saved and can be replayed or recovered.
@@ -103,7 +103,7 @@ This is where most of the platform’s microservices reside, ensuring scalabilit
 Now, let's break down how data flows between the components:
 
 1. **User Interaction with Nexi Booking**: External users access **Nexi Booking** through an authenticated web interface. This interaction starts the process where booking data can be stored or further processed.
-2. **Editor Access to Koksmat Studio**: Editors use the **Koksmat Studio** to create workflows. Once created, these workflows are stored in the **PostgreSQL Database** through the **Workflow Designer**.
+2. **Editor Access to Magic Button Studio**: Editors use the **Magic Button Studio** to create workflows. Once created, these workflows are stored in the **PostgreSQL Database** through the **Workflow Designer**.
 
 3. **Workflow Execution**: The **Workflow Controller** coordinates the execution of workflows by interacting with the **Workflow Runtime**. The runtime component executes the steps defined in the workflow, such as sending emails using the **Office Graph**.
 

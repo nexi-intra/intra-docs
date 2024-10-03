@@ -7,7 +7,7 @@ hide_sidebar: true
 
 # `koksmat auto run`
 
-The `run` subcommand under the `auto` command is used to initiate and manage an autopilot session in the Koksmat environment. This command executes a series of automated tasks defined in the session, interacting with the Koksmat Studio API.
+The `run` subcommand under the `auto` command is used to initiate and manage an autopilot session in the Koksmat environment. This command executes a series of automated tasks defined in the session, interacting with the Magic Button Studio API.
 
 ## Usage
 
@@ -15,12 +15,12 @@ The `run` subcommand under the `auto` command is used to initiate and manage an 
 koksmat auto run [sessionId] [rooturl]
 ```
 
-This command runs the autopilot mode with a specific session ID and optionally, a root URL for the Koksmat Studio.
+This command runs the autopilot mode with a specific session ID and optionally, a root URL for the Magic Button Studio.
 
 ### Parameters
 
 - `sessionId`: The ID of the session to be run in autopilot mode. This is a required parameter.
-- `rooturl`: The base URL of the Koksmat Studio. This is optional; if not provided, the command will use the URL configured in the environment.
+- `rooturl`: The base URL of the Magic Button Studio. This is optional; if not provided, the command will use the URL configured in the environment.
 
 ## Functionality
 

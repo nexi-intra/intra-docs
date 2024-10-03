@@ -6,7 +6,7 @@ sidebar_label: Add
 
 # `koksmat add`
 
-The `add` command allows you to add ingredients to your project based on the provided ID. This is useful when you've identified a snippet or component using the Koksmat Studio and want to integrate it into your project.
+The `add` command allows you to add ingredients to your project based on the provided ID. This is useful when you've identified a snippet or component using the Magic Button Studio and want to integrate it into your project.
 
 ## Usage
 
@@ -24,7 +24,7 @@ This command is used to add specific elements to your project.
 koksmat add V1StGXR8_Z5jdHi6B-myT
 ```
 
-This example demonstrates how to add a snippet that you've found using Koksmat Studio. The snippet is identified by the ID `V1StGXR8_Z5jdHi6B-myT`.
+This example demonstrates how to add a snippet that you've found using Magic Button Studio. The snippet is identified by the ID `V1StGXR8_Z5jdHi6B-myT`.
 
 ## Flags
 

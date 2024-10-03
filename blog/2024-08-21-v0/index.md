@@ -29,7 +29,7 @@ Using v0.dev is straightforward, check it here
 
 #### **Real-World Use Case:**
 
-Picture this: you're tasked with managing a Microsoft 365 environment and need to create a self-service portal for managing meeting rooms within your organization. Traditionally, this would involve significant time spent coding and testing to ensure the interface meets your needs. However, with v0.dev, in combination with Koksmat Studio, you can streamline this process dramatically. By leveraging these tools, you can generate a fully functional user interface in just minutes, eliminating the need for hours—or even days—of manual work. This approach not only speeds up deployment but also allows you to focus on optimizing the user experience and meeting your organization’s specific requirements.
+Picture this: you're tasked with managing a Microsoft 365 environment and need to create a self-service portal for managing meeting rooms within your organization. Traditionally, this would involve significant time spent coding and testing to ensure the interface meets your needs. However, with v0.dev, in combination with Magic Button Studio, you can streamline this process dramatically. By leveraging these tools, you can generate a fully functional user interface in just minutes, eliminating the need for hours—or even days—of manual work. This approach not only speeds up deployment but also allows you to focus on optimizing the user experience and meeting your organization’s specific requirements.
 
 #### **Get Started Today!**
 
