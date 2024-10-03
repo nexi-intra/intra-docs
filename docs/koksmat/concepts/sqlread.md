@@ -1,6 +1,6 @@
 ---
 id: database-operations
-title: Database Operations Overview
+title: Database Read Operations Overview
 description: Overview of how database operations are handled in the system, including frontend queries, NATS microservice handling, and PostgreSQL connection.
 ---
 
@@ -11,20 +11,6 @@ This document outlines how the Next.js web application interacts with the databa
 ## System Architecture Overview
 
 The system is composed of several components that interact to perform database operations. Below is a high-level architecture view.
-
-```mermaid
-graph TD
-  Client[Client: Next.js Frontend] -->|SQL Query| Server[Next.js Server]
-  Server -->|NATS Publish| NATS[NATS]
-  NATS -->|SQL Request| Microservice[Microservice: magic-mix]
-  Microservice -->|DB Connection String| PostgreSQL[PostgreSQL: Mix DB]
-  PostgreSQL -->|Run Query| TargetDB[Target Database]
-  TargetDB -->|Result| PostgreSQL
-  PostgreSQL -->|Send JSON Result| Microservice
-  Microservice -->|NATS Publish| NATS
-  NATS -->|SQL Result| Server
-  Server -->|Send JSON| Client
-```
 
 ### Components
 
@@ -44,25 +30,36 @@ sequenceDiagram
     box  Internet
         participant Client as Client (Next.js Frontend)
     end
-    box gray Magic Box Kubernetes cluster
+    box  Microsoft Online
+        participant Azure as Entra ID
+    end
+    box Magic Box Kubernetes cluster
         participant Server as Server (Next.js)
         participant NATS as NATS
         participant Microservice as Microservice (magic-mix)
     end
-    box gray PostgreSQL
+    box PostgreSQL
         participant PostgreSQL as PostgreSQL (Mix DB)
         participant TargetDB as Target Database
     end
+    Client->>Azure: Authenticate
+    Azure-->>Client: Token
+    Client->>Server: Send SQL query + token
+     note right of Client: Wait for server to process
+    rect rgb(240, 240, 240)
+    Server->>NATS: Store query + token in work queue
 
-    Client->>Server: Send SQL query
-    Server->>NATS: Publish query to NATS
-    NATS->>Microservice: Forward SQL request
+    note right of Server: Wait for service to process
+    NATS->>Microservice: Pick up request and validate token
     Microservice->>PostgreSQL: Get connection string
+    note right of Microservice: Can only get readonly connections
     PostgreSQL-->>Microservice: Return connection string
     Microservice->>TargetDB: Execute SQL query
     TargetDB-->>Microservice: Return result
     Microservice->>NATS: Publish result to NATS
     NATS->>Server: Forward SQL result
+
+    end
     Server->>Client: Return JSON result
 
 
