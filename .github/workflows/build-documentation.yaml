@@ -1,4 +1,4 @@
-name: Renew Exchange Connection String
+name: Build Document for a given repository
 
 on:
   workflow_dispatch:

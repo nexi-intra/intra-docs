@@ -1,21 +1,46 @@
+param (
+  $org = "nexi-intra",
+  $repo = "koksmat-captain",
+  $cleanGitClone = $false,
+  $cleanLocalDocs = $true
+)
 # Define the output directory
-$docsDir = Join-Path $env:workdir 'docs'
-
+$docsRootDir = Join-Path $env:workdir 'docs' $org $repo
+$docsDir = Join-Path $docsRootDir 'output'
 # Ensure the docs directory exists; create it if it doesn't
-if (-not (Test-Path -Path $docsDir)) {
+if (-not (Test-Path -Path $docsRootDir)) {
   try {
-    New-Item -Path $docsDir -ItemType Directory -Force | Out-Null
-    Write-Verbose "Created directory: $docsDir"
+    New-Item -Path $docsRootDir -ItemType Directory -Force | Out-Null
+    Write-Verbose "Created directory: $docsRootDir"
   }
   catch {
-    Write-Error "Failed to create directory $docsDir. $_"
+    Write-Error "Failed to create directory $docsRootDir. $_"
     exit 1
   }
 }
 
-# Retrieve all run.ps1 files recursively from the current directory
+Set-Location $docsRootDir
+
+$repodir = Join-Path $docsRootDir "repo"
+
+if (Test-Path -Path $repodir) {
+  if ($cleanGitClone) {
+    Remove-Item -Path $repodir -Recurse -Force
+    gh repo clone $org/$repo "repo"  -- --depth=1
+  }
+}
+else {
+  gh repo clone $org/$repo "repo" -- --depth=1
+}
+<#
+Now that we have the repository cloned, we can start looking for files that we like to process
+#>
+Set-Location $repodir
+
+
+# Retrieve all *.ps1 files recursively from the current directory
 try {
-  $runScripts = Get-ChildItem -Path . -Recurse -Filter 'run.ps1' -File
+  $runScripts = Get-ChildItem -Path . -Recurse -Filter '*.ps1' -Exclude 'debug.ps1', 'temp.ps1'  -File
   Write-Verbose "Found $($runScripts.Count) run.ps1 files."
 }
 catch {
@@ -27,63 +52,11 @@ catch {
 $tripleBackticks = '```'
 
 # Function to parse run.ps1 content into code and markdown segments
-function Parse-RunScriptContent {
-  param (
-    [string]$Content
-  )
 
-  # Initialize an array to hold the segments
-  $segments = @()
-
-  # Define regex patterns
-  $markdownStartPattern = '<#'
-  $markdownEndPattern = '#>'
-
-  # Initialize state variables
-  $currentIndex = 0
-  $isMarkdown = $false
-
-  while ($currentIndex -lt $Content.Length) {
-    if (-not $isMarkdown) {
-      # Look for the start of a markdown block
-      $start = $Content.IndexOf($markdownStartPattern, $currentIndex)
-      if ($start -eq -1) {
-        # No more markdown blocks; add the rest as code
-        $segments += [PSCustomObject]@{ Type = 'Code'; Content = $Content.Substring($currentIndex) }
-        break
-      }
-      else {
-        if ($start -gt $currentIndex) {
-          # Add code before the markdown block
-          $codeSegment = $Content.Substring($currentIndex, $start - $currentIndex)
-          $segments += [PSCustomObject]@{ Type = 'Code'; Content = $codeSegment }
-        }
-        # Update currentIndex to after the start marker
-        $currentIndex = $start + $markdownStartPattern.Length
-        $isMarkdown = $true
-      }
-    }
-    else {
-      # Look for the end of the markdown block
-      $end = $Content.IndexOf($markdownEndPattern, $currentIndex)
-      if ($end -eq -1) {
-        # No end marker found; treat the rest as markdown
-        $markdownSegment = $Content.Substring($currentIndex)
-        $segments += [PSCustomObject]@{ Type = 'Markdown'; Content = $markdownSegment }
-        break
-      }
-      else {
-        # Extract markdown content
-        $markdownSegment = $Content.Substring($currentIndex, $end - $currentIndex)
-        $segments += [PSCustomObject]@{ Type = 'Markdown'; Content = $markdownSegment }
-        # Update currentIndex to after the end marker
-        $currentIndex = $end + $markdownEndPattern.Length
-        $isMarkdown = $false
-      }
-    }
+if (Test-Path -Path $docsDir) {
+  if ($cleanLocalDocs) {
+    Remove-Item -Path $docsDir -Recurse -Force
   }
-
-  return $segments
 }
 
 # Process each run.ps1 file to create an individual Markdown file
@@ -94,20 +67,21 @@ foreach ($script in $runScripts) {
   # Compute the relative path from the current directory to the file's directory
   $currentPath = (Get-Location).Path
   $fullFilePath = $fileDir.FullName
+  $baseFileName = $script.BaseName
 
   # Handle different path formats (Windows vs. Unix)
   $relativePath = $fullFilePath.Substring($currentPath.Length).TrimStart('\', '/')
 
   # Calculate the entry name
-  if ([string]::IsNullOrEmpty($relativePath)) {
-    # If run.ps1 is in the current directory
-    $calculatedName = 'run'
-  }
-  else {
-    # Replace backslashes or forward slashes with dashes and append '-run'
-    $calculatedName = ($relativePath -replace '[\\/]', '-') + '-run'
-  }
-
+  # if ([string]::IsNullOrEmpty($relativePath)) {
+  #   # If run.ps1 is in the current directory
+  #   $calculatedName = $baseFileName
+  # }
+  # else {
+  #   # Replace backslashes or forward slashes with dashes and append '-run'
+  #   $calculatedName = ($relativePath -replace '[\\/]', '-') + '-' + $baseFileName
+  # }
+  $calculatedName = $script.Name
   # Define the Markdown file name
   $markdownFileName = "$calculatedName.md"
 
@@ -126,7 +100,7 @@ foreach ($script in $runScripts) {
   else {
     Join-Path $docsDir $markdownRelativeDir
   }
-
+  #$markdownFullDir = $docsDir
   # Ensure the directory exists
   if (-not (Test-Path -Path $markdownFullDir)) {
     try {
@@ -140,7 +114,7 @@ foreach ($script in $runScripts) {
   }
 
   # Define the full Markdown file path within the subdirectory
-  $markdownFilePath = Join-Path $markdownFullDir $markdownFileName
+  $markdownFilePath = Join-Path $markdownFullDir $markdownFileName 
 
   # Read the content of the run.ps1 file
   try {
@@ -183,7 +157,8 @@ foreach ($script in $runScripts) {
   }
 
   # Parse the script content into segments
-  $segments = Parse-RunScriptContent -Content $scriptContent
+  . "$PSScriptRoot/parse-powershell.ps1"
+  $segments = Parse-PowerShell -Content $scriptContent
 
   # Initialize an array to hold the formatted Markdown content
   $formattedContent = @()

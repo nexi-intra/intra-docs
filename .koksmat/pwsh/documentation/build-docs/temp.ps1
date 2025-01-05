@@ -76,6 +76,12 @@ $env:DOCUSAURUS = "/Users/nielsgregersjohansen/sites/docusaurus"
 $env:BLOBFILE = "https://magicbox.blob.core.windows.net/kpi/devicekpi.json?sp=w&st=2024-01-26T11:55:30Z&se=2024-01-26T19:55:30Z&spr=https&sv=2022-11-02&sr=b&sig=TTDuCkeadi7u2t5rQAJIYFs2uMrgMqN%2BMGs8QNZUQlg%3D"
 
 #--------------------------------------
+# /Users/nielsgregersjohansen/kitchens/docs/.koksmat/pwsh/documentation/build-docs/.env
+#--------------------------------------
+$env:DOC_ORG = "nexi-intra"
+$env:DOC_REPO = "koksmat-captain"
+
+#--------------------------------------
 #  End of .env files
 #
 #  Applying Additional settings

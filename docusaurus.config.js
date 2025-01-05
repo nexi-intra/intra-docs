@@ -79,11 +79,16 @@ const config = {
         title: "KOKSMAT",
         items: [
 
-          { to: "/blog", label: "Blog", position: "left" },
-           { to: "/docs/koksmat", label: "Developer", position: "left" },
-           { to: "/docs/apps", label: "Tools", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
+           { to: "/docs/repo", label: "Repositories", position: "left" },
+          //  { to: "/docs/apps", label: "Tools", position: "left" },
 
-           { to: "/docs/gallery", label: "Gallery", position: "left" },
+          //  { to: "/docs/gallery", label: "Gallery", position: "left" },
+          {
+            href: "https://www.koksmat.com",
+            label: "Web",
+            position: "right",
+          },
           {
             href: "https://github.com/koksmat-com/docs",
             label: "GitHub",
@@ -104,19 +109,19 @@ const config = {
             ],
           },
 
-          {
-            title: "More",
-            items: [
-               {
-                 label: "Blog",
-                 to: "/blog",
-               },
-              {
-                label: "GitHub",
-                href: "https://github.com/koksmat-com/docs",
-              },
-            ],
-          },
+          // {
+          //   title: "More",
+          //   items: [
+          //      {
+          //        label: "Blog",
+          //        to: "/blog",
+          //      },
+          //     {
+          //       label: "GitHub",
+          //       href: "https://github.com/koksmat-com/docs",
+          //     },
+          //   ],
+          // },
         ],
        // copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
       },
