@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant Client
+    participant KoksmatProvider
+    participant MSAL
+    participant KoksmatAPI as Koksmat API (/api/token)
+    participant MicrosoftOnline as Microsoft Online
+    participant Backend
+
+    Client->>KoksmatProvider: Initialize
+    KoksmatProvider->>MSAL: Get active account
+    MSAL-->>KoksmatProvider: Return active account
+    KoksmatProvider->>MSAL: Acquire token silently
+    MSAL-->>KoksmatProvider: Return MSAL token
+    KoksmatProvider->>KoksmatAPI: POST /api/token (MSAL token)
+    KoksmatAPI->>MicrosoftOnline: Validate MSAL token
+    MicrosoftOnline-->>KoksmatAPI: Token validation result
+    KoksmatAPI->>Backend: Request Koksmat token (UPN, roles, appId)
+    Backend-->>KoksmatAPI: Return Koksmat token
+    KoksmatAPI-->>KoksmatProvider: Return Koksmat token
+    KoksmatProvider->>KoksmatProvider: Store token in state
+
+    loop Every 5 minutes
+        KoksmatProvider->>MSAL: Acquire new MSAL token
+        MSAL-->>KoksmatProvider: Return new MSAL token
+        KoksmatProvider->>KoksmatAPI: POST /api/token (new MSAL token)
+        KoksmatAPI->>MicrosoftOnline: Validate MSAL token
+        MicrosoftOnline-->>KoksmatAPI: Token validation result
+        KoksmatAPI->>Backend: Request new Koksmat token
+        Backend-->>KoksmatAPI: Return new Koksmat token
+        KoksmatAPI-->>KoksmatProvider: Return new Koksmat token
+        KoksmatProvider->>KoksmatProvider: Update token in state
+    end
+
+    Client->>KoksmatProvider: Use token (via useKoksmat hook)
+    KoksmatProvider-->>Client: Provide current token
