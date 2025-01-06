@@ -15,10 +15,9 @@ COPY --from=node /usr/local/bin /usr/local/bin
 
 WORKDIR /koksmat/.koksmat/web
 COPY . .
-RUN npm install -g pnpm
-RUN pnpm install
-RUN pnpm build
+RUN npm install
+RUN npm build
 
 EXPOSE 4444
 
-CMD [ "pnpm","serve"]
+CMD [ "npm","serve"]
