@@ -76,7 +76,7 @@ $env:DOCUSAURUS = "/Users/nielsgregersjohansen/sites/docusaurus"
 $env:BLOBFILE = "https://magicbox.blob.core.windows.net/kpi/devicekpi.json?sp=w&st=2024-01-26T11:55:30Z&se=2024-01-26T19:55:30Z&spr=https&sv=2022-11-02&sr=b&sig=TTDuCkeadi7u2t5rQAJIYFs2uMrgMqN%2BMGs8QNZUQlg%3D"
 
 #--------------------------------------
-# /Users/nielsgregersjohansen/kitchens/docs/scripts/documentation/build-docs/.env
+# /Users/nielsgregersjohansen/kitchens/intra-docs/scripts/documentation/build-docs/.env
 #--------------------------------------
 $env:DOC_ORG = "nexi-intra"
 $env:DOC_REPO = "koksmat-captain"
@@ -87,6 +87,6 @@ $env:DOC_REPO = "koksmat-captain"
 #  Applying Additional settings
 # 
 #--------------------------------------
-$env:WORKDIR = "/Users/nielsgregersjohansen/kitchens/docs/.koksmat/workdir"
+$env:WORKDIR = "/Users/nielsgregersjohansen/kitchens/intra-docs/.koksmat/workdir"
 Write-Host "WORKDIR: $workdir"
 
