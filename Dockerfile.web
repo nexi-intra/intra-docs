@@ -15,7 +15,7 @@ COPY --from=node /usr/local/bin /usr/local/bin
 
 WORKDIR /koksmat/.koksmat/web
 COPY . .
-RUN npm install
+RUN npm install --legacy-peer-deps
 RUN npm build
 
 EXPOSE 4444
