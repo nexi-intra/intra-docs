@@ -1,6 +1,6 @@
 ---
 title: "share-secret.ps1"
-date: "2025-01-05T16:58:42Z"
+date: "2025-01-06T07:35:12Z"
 description: "Description for share-secret.ps1."
 tags: []
 author: "Unknown"
@@ -73,4 +73,10 @@ GraphAPI `
 }
 "@
 ```
+
+### Environment Variables Used
+
+| Environment Variable |
+|----------------------|| GRAPH_ACCESSTOKEN |\n| GRAPH_APPDOMAIN |\n| OWNER_UPN |\n| SENDER_UPN |\n| TARGET_APPID |\n| TARGET_DOMAIN |\n| TARGET_SITE |\n
+
 

@@ -1,7 +1,7 @@
 param (
   $org = "nexi-intra",
   $repo = "koksmat-captain",
-  $cleanGitClone = $false,
+  $cleanGitClone = $true,
   $cleanLocalDocs = $true
 )
 # Define the output directory
@@ -40,8 +40,8 @@ Set-Location $repodir
 
 # Retrieve all *.ps1 files recursively from the current directory
 try {
-  $runScripts = Get-ChildItem -Path . -Recurse -Filter '*.ps1' -Exclude 'debug.ps1', 'temp.ps1'  -File
-  Write-Verbose "Found $($runScripts.Count) run.ps1 files."
+  $runScripts = Get-ChildItem -Path . -Recurse -Filter '*.ps1' -Exclude 'debug.ps1', 'temp.ps1'.'.*.ps1'  -File
+  Write-Verbose "Found $($runScripts.Count) .ps1 files."
 }
 catch {
   Write-Error "Error while searching for run.ps1 files. $_"
@@ -84,6 +84,9 @@ foreach ($script in $runScripts) {
   $calculatedName = $script.Name
   # Define the Markdown file name
   $markdownFileName = "$calculatedName.md"
+  if ($markdownFileName -eq "run.ps1.md") {
+    $markdownFileName = "index.md"
+  }
 
   # Define the relative directory for the markdown file within docs
   $markdownRelativeDir = if ([string]::IsNullOrEmpty($relativePath)) {
@@ -156,9 +159,19 @@ foreach ($script in $runScripts) {
     $author = $matches[1].Trim()
   }
 
+
   # Parse the script content into segments
+  write-host "Parsing $($script.FullName)"
   . "$PSScriptRoot/parse-powershell.ps1"
-  $segments = Parse-PowerShell -Content $scriptContent
+  $parseResult = Parse-PowerShell -Content $scriptContent
+  $segments = $parseResult.Segments
+  $frontMatter = $parseResult.FrontMatter
+  if ($frontMatter.title) {
+    $title = $frontMatter.title
+   
+  }
+
+  
 
   # Initialize an array to hold the formatted Markdown content
   $formattedContent = @()

@@ -1,6 +1,6 @@
 ---
 title: "add-cert.ps1"
-date: "2025-01-05T16:58:42Z"
+date: "2025-01-06T07:35:12Z"
 description: "Description for add-cert.ps1."
 tags: []
 author: "Unknown"

@@ -1,14 +1,11 @@
 ---
-title: "run.ps1"
-date: "2025-01-05T16:58:42Z"
+title: "Renew Sharepoint Connection String"
+date: "2025-01-06T07:35:12Z"
 description: "Description for run.ps1."
 tags: []
 author: "Unknown"
 ---
 
----
-title: Renew Sharepoint Connection String
----
 ## Add a certificate to an application and share the secret with the owner
 
 End result is that a text file containing the environment variables needed to connect to 
@@ -65,4 +62,10 @@ catch {
   
 }
 ```
+
+### Environment Variables Used
+
+| Environment Variable |
+|----------------------|| CERTDIR |\n| OWNER_UPN |\n| TARGET_APPID |\n
+
 

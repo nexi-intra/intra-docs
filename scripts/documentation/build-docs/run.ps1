@@ -1,6 +1,6 @@
 
 
-$root = [System.IO.Path]::GetFullPath((join-path $PSScriptRoot .. .. .. .. )) 
+$root = [System.IO.Path]::GetFullPath((join-path $PSScriptRoot .. .. ..  )) 
 $env:workdir = [System.IO.Path]::GetFullPath((join-path $root ".koksmat" "workdir" )) 
 . "$root/.koksmat/pwsh/check-env.ps1" "DOC_REPO", "DOC_ORG"
 

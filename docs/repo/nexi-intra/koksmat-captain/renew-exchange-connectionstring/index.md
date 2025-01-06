@@ -1,18 +1,15 @@
 ---
-title: "run.ps1"
-date: "2025-01-05T16:58:42Z"
+title: "Renew Exchange Connection String"
+date: "2025-01-06T07:35:12Z"
 description: "Description for run.ps1."
 tags: []
 author: "Unknown"
 ---
 
----
-title: Renew Sharepoint Connection String
----
 ## Add a certificate to an application and share the secret with the owner
 
 End result is that a text file containing the environment variables needed to connect to 
-Sharepoint Online is created and shared with the owner using the owners OneDrive.
+Exchange Online is created and shared with the owner using the owners OneDrive.
 
 The owners gets an email notifying them that connection information has been shared with them.
 
@@ -36,7 +33,7 @@ try {
 
   . "$PSScriptRoot/generate-cert.ps1" 
 
-  New-Cert -SubjectName $subject -BaseFileName "app"
+  New-Cert -SubjectName $subject -BaseFileName "exchange"
 ```
 
 ### Add the certificate to the application
@@ -45,8 +42,8 @@ try {
 ```powershell
  
   $certDir = $env:CERTDIR 
-  $pfx = Get-Content -Path (join-path $certDir "app.b64pfx") -Raw 
-  $cert = Get-Content -Path (join-path $certDir "app.b64cer") -Raw 
+  $pfx = Get-Content -Path (join-path $certDir "exchange.b64pfx") -Raw 
+  $cert = Get-Content -Path (join-path $certDir "exchange.b64cer") -Raw 
 
   
   . "$PSScriptRoot/add-cert.ps1"  -ApplicationId $env:TARGET_APPID -Subject $subject  -certBase64 $cert
@@ -65,4 +62,10 @@ catch {
   
 }
 ```
+
+### Environment Variables Used
+
+| Environment Variable |
+|----------------------|| CERTDIR |\n| OWNER_UPN |\n| TARGET_APPID |\n
+
 

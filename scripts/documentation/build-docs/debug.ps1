@@ -1,7 +1,7 @@
 Push-Location
 try {
   Set-Location $PSScriptRoot
-  $root = [System.IO.Path]::GetFullPath((join-path $PSScriptRoot .. .. .. .. )) 
+  $root = [System.IO.Path]::GetFullPath((join-path $PSScriptRoot .. .. ..  )) 
   . "$root/.koksmat/pwsh/build-env.ps1"
   . "$PSScriptRoot/temp.ps1"
   . "$PSScriptRoot/run.ps1"

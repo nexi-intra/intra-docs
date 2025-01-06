@@ -7,7 +7,7 @@ param (
 # Define the output directory
 $docsRootDir = Join-Path $env:workdir 'docs' $org $repo
 $docsDir = Join-Path $docsRootDir 'output'
-$docusaurusRootDir = Join-Path $PSScriptRoot ".." ".." ".." ".." "docs" "repo" 
+$docusaurusRootDir = Join-Path $PSScriptRoot ".." ".." ".."  "docs" "repo" 
 
 if (-not (Test-Path -Path $docsDir)) {
   throw "The output directory does not exist. Please run the build-documentation.ps1 script first."
@@ -21,8 +21,9 @@ write-host "working with" $docusaurusRootDir
 
 $targetDir = Join-Path $docusaurusRootDir  $org $repo
 
-if ((Test-Path -Path $$targetDir) -and $cleanDocusaurusTargetFolder) { 
+if ((Test-Path -Path $targetDir) -and $cleanDocusaurusTargetFolder) { 
   Remove-Item -Path $targetDir -Recurse -Force
+  New-Item -Path $targetDir -ItemType Directory -Force | Out-Null
 }
 else {
   New-Item -Path $targetDir -ItemType Directory -Force | Out-Null

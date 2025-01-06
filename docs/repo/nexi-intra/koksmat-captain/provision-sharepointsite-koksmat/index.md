@@ -1,13 +1,13 @@
 ---
-title: "run.ps1"
-date: "2025-01-05T16:58:42Z"
+title: "Provision SharePoint site for Koksmat"
+date: "2025-01-06T07:35:12Z"
 description: "Description for run.ps1."
 tags: []
 author: "Unknown"
 ---
 
 ```powershell
-
+#>
 $root = [System.IO.Path]::GetFullPath(( join-path $PSScriptRoot ..)) 
 
 write-host "Root: $root"
